@@ -93,7 +93,7 @@ public class PartitaTest {
     }
     
     @Test
-    public void testIsFinitaRestituzioneTrueSeForzoFinita() {
+    public void testIsFinitaRestituzioneTrueForzandoFinita() {
         this.partita.setFinita();
         assertTrue(this.partita.isFinita());
     }

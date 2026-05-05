@@ -5,15 +5,14 @@ import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.giocatore.Giocatore;
 
 /**
- * Partita: Rappresenta lo stato complessivo della partita.
- * Tiene insieme giocatore, labirinto, stanza corrente
- * e informazione sulla fine del gioco.
- * 
- * @author  Mat. 627298 | Mat. 628848
- * @see Stanza
- * @see Labirinto
- * @see Giocatore
- * @version Revisionata
+ * Partita: rappresenta lo stato complessivo di una partita di DiaDia.
+ *
+ * Contiene il labirinto, il giocatore, la stanza corrente e l'informazione
+ * sulla conclusione della partita. Verifica inoltre le condizioni di vittoria
+ * e consente ai comandi di modificare lo stato del gioco.
+ *
+ * @author Mat. 627298 | Mat. 628848
+ * @version 2.0
  */
 public class Partita {
     private Giocatore giocatore;

@@ -3,13 +3,19 @@ package it.uniroma3.diadia.ambienti;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 /**
- * Labirinto: Rappresenta il labirinto del gioco.
- * Si occupa di creare le stanze, collegarle tra loro
- * e definire stanza iniziale e stanza finale.
- * 
- * @author  Mat. 627298 | Mat. 628848
+ * Labirinto: costruisce e rappresenta la mappa del gioco.
+ *
+ * Crea le stanze del labirinto, le collega tramite direzioni, posiziona
+ * gli attrezzi iniziali e definisce stanza iniziale e stanza finale.
+ * Nel labirinto sono presenti anche stanze speciali, come la stanza magica,
+ * la stanza buia e la stanza bloccata.
+ *
+ * @author Mat. 627298 | Mat. 628848
  * @see Stanza
- * @version Revisionata
+ * @see StanzaMagica
+ * @see StanzaBuia
+ * @see StanzaBloccata
+ * @version 2.0
  */
 public class Labirinto {
     private Stanza stanzaIniziale;
@@ -30,12 +36,13 @@ public class Labirinto {
         /* crea gli attrezzi */
         Attrezzo lanterna = new Attrezzo("lanterna", 3);
         Attrezzo osso = new Attrezzo("osso", 1);
+        Attrezzo chiave = new Attrezzo("chiave", 2);
 
         /* crea stanze del labirinto */
         Stanza atrio = new Stanza("Atrio");
-        Stanza aulaN11 = new Stanza("Aula N11");
-        Stanza aulaN10 = new Stanza("Aula N10");
-        Stanza laboratorio = new Stanza("Laboratorio Campus");
+        Stanza aulaN11 = new StanzaMagica("Aula N11");
+        Stanza aulaN10 = new StanzaBloccata("Aula N10", "est", "chiave");
+        Stanza laboratorio = new StanzaBuia("Laboratorio Campus", "lanterna");
         Stanza biblioteca = new Stanza("Biblioteca");
 
         /* collega le stanze */
@@ -58,6 +65,7 @@ public class Labirinto {
 
         /* pone gli attrezzi nelle stanze */
         aulaN10.addAttrezzo(lanterna);
+        aulaN11.addAttrezzo(chiave);
         atrio.addAttrezzo(osso);
 
         /* stanza iniziale e finale */

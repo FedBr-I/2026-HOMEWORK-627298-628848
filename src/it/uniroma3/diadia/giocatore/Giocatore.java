@@ -1,12 +1,15 @@
 package it.uniroma3.diadia.giocatore;
 
 /**
- * Giocatore: Rappresenta il giocatore della partita.
- * Il giocatore ha un certo numero di CFU e possiede una borsa.
- * 
- * @author  Mat. 627298 | Mat. 628848
+ * Giocatore: rappresenta il giocatore della partita.
+ *
+ * Mantiene i CFU disponibili e la borsa degli attrezzi raccolti. I CFU
+ * diminuiscono durante gli spostamenti e la borsa viene usata dai comandi
+ * che prendono o posano attrezzi.
+ *
+ * @author Mat. 627298 | Mat. 628848
  * @see Borsa
- * @version Revisionata
+ * @version 2.0
  */
 public class Giocatore {
     private static final int CFU_INIZIALI = 20;
@@ -61,5 +64,15 @@ public class Giocatore {
      */
     public Borsa getBorsa() {
         return this.borsa;
+    }
+    
+    @Override
+    public String toString() {
+    	StringBuilder descrizione = new StringBuilder();
+    	
+    	descrizione.append("Cfu Giocatore: " + cfu + "\n");
+    	descrizione.append(this.borsa.toString());
+    	
+    	return descrizione.toString();
     }
 }

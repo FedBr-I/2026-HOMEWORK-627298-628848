@@ -1,11 +1,14 @@
 package it.uniroma3.diadia.attrezzi;
 
 /**
- * Attrezzo: Rappresenta un attrezzo del gioco.
- * Ogni attrezzo ha un nome e un peso.
- * 
- * @author  Mat. 627298 | Mat. 628848
- * @version Revisionata
+ * Attrezzo: rappresenta un oggetto utilizzabile nel gioco.
+ *
+ * Ogni attrezzo è caratterizzato da un nome e da un peso. Può trovarsi
+ * in una stanza oppure nella borsa del giocatore e viene usato dai comandi
+ * di prendi e posa.
+ *
+ * @author Mat. 627298 | Mat. 628848
+ * @version 2.0
  */
 public class Attrezzo {
 

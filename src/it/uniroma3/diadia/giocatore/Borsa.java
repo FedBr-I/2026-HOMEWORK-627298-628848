@@ -3,13 +3,15 @@ package it.uniroma3.diadia.giocatore;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 /**
- * Borsa: Rappresenta la borsa del giocatore.
- * Qui vengono conservati gli attrezzi raccolti durante la partita.
- * La borsa ha un peso massimo e un numero massimo di attrezzi contenibili.
- * 
- * @author  Mat. 627298 | Mat. 628848
- * @see Attrezzo
- * @version Revisionata
+ * Borsa: rappresenta l'inventario del giocatore.
+ *
+ * Conserva gli attrezzi raccolti durante la partita, rispettando un peso
+ * massimo e un numero massimo di elementi. Offre metodi per aggiungere,
+ * rimuovere, cercare e descrivere gli attrezzi contenuti.
+ *
+ * @author Mat. 627298 | Mat. 628848
+ * @see Giocatore
+ * @version 2.0
  */
 public class Borsa {
     private static final int DEFAULT_PESO_MAX_BORSA = 10;
@@ -154,7 +156,6 @@ public class Borsa {
     
     /**
      * Restituisce una descrizione testuale del contenuto della borsa.
-     * Se è vuota, viene restituito un messaggio semplice.
      * 
      * @return una stringa che descrive la borsa
      */

@@ -3,32 +3,29 @@ package it.uniroma3.diadia.ambienti;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 /**
- * Stanza: rappresenta una stanza ordinaria del labirinto.
+ * StanzaProtected: versione alternativa di Stanza con campi protetti.
  *
- * Ogni stanza ha un nome, può contenere un numero limitato di attrezzi
- * e può essere collegata ad altre stanze tramite direzioni. Offre i servizi
- * pubblici usati dalle sottoclassi senza esporre direttamente i propri campi.
+ * Rappresenta una stanza del labirinto analoga a Stanza, ma rende protette le variabili di istanza.
  *
  * @author Mat. 627298 | Mat. 628848
- * @see StanzaMagica
- * @see StanzaBuia
- * @see StanzaBloccata
+ * @see Stanza
+ * @see StanzaMagicaProtected
  * @version 2.0
  */
-public class Stanza {
+public class StanzaProtected {
     
     static final private int NUMERO_MASSIMO_DIREZIONI = 4;
     static final private int NUMERO_MASSIMO_ATTREZZI = 10;
     
-    private String nome;
+    protected String nome;
     
-    private Attrezzo[] attrezzi;
-    private int numeroAttrezzi;
+    protected Attrezzo[] attrezzi;
+    protected int numeroAttrezzi;
     
-    private Stanza[] stanzeAdiacenti;
-    private int numeroStanzeAdiacenti;
+    protected Stanza[] stanzeAdiacenti;
+    protected int numeroStanzeAdiacenti;
     
-    private String[] direzioni;
+    protected String[] direzioni;
     
     /**
      * Crea una stanza con il nome specificato.
@@ -36,7 +33,7 @@ public class Stanza {
      * 
      * @param nome il nome della stanza
      */
-    public Stanza(String nome) {
+    public StanzaProtected(String nome) {
        this.nome = nome;
        this.attrezzi = new Attrezzo[NUMERO_MASSIMO_ATTREZZI];
        this.numeroAttrezzi = 0;
@@ -199,7 +196,7 @@ public class Stanza {
     /**
      * Restituisce l'elenco delle direzioni effettivamente disponibili.
      * 
-     * @return un array contenente le direzioni percorribili
+     * @return un array contenente le direzioni usabili
      */
     public String[] getDirezioni() {
         String[] direzioni = new String[this.numeroStanzeAdiacenti];
